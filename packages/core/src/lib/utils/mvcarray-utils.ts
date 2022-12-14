@@ -1,10 +1,10 @@
 import { fromEventPattern, Observable } from 'rxjs';
 
-export function createMVCEventObservable<T>(array: google.maps.MVCArray<T>): Observable<MVCEvent<T>>{
+export function createMVCEventObservable<T>(array: google.maps.MVCArray<T>): Observable<MVCEvent<T>> {
   const eventNames = ['insert_at', 'remove_at', 'set_at'];
   return fromEventPattern(
     handler => eventNames.map(eventName => array.addListener(eventName,
-      (index: number, previous?: T) => handler.apply(array, [ {newArr: array.getArray(), eventName, index, previous} as MVCEvent<T>]))),
+      (index: number, previous?: T) => handler.apply(array, [{ newArr: array.getArray(), eventName, index, previous } as MVCEvent<T>]))),
     (_handler, evListeners: google.maps.MapsEventListener[]) => evListeners.forEach(evListener => evListener.remove()));
 }
 
@@ -24,13 +24,13 @@ export class MvcArrayMock<T> implements google.maps.MVCArray<T> {
     'insert_at': ((i: number) => void)[];
     'set_at': ((i: number, val: T) => void)[];
   } = {
-    remove_at: [],
-    insert_at: [],
-    set_at: [],
-  };
+      remove_at: [],
+      insert_at: [],
+      set_at: [],
+    };
   clear(): void {
     for (let i = this.vals.length - 1; i >= 0; i--) {
-        this.removeAt(i);
+      this.removeAt(i);
     }
   }
   getArray(): T[] {
@@ -73,9 +73,9 @@ export class MvcArrayMock<T> implements google.maps.MVCArray<T> {
     const listenerArr = this.listeners[eventName];
     listenerArr.push(handler);
     return {
-        remove: () => {
-            listenerArr.splice(listenerArr.indexOf(handler), 1);
-        },
+      remove: () => {
+        listenerArr.splice(listenerArr.indexOf(handler), 1);
+      },
     };
   }
 

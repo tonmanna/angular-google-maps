@@ -8,9 +8,9 @@ import { GoogleMapsAPIWrapper } from './../google-maps-api-wrapper';
 @Injectable()
 export class MarkerManager {
   protected _markers: Map<AgmMarker, Promise<google.maps.Marker>> =
-      new Map<AgmMarker, Promise<google.maps.Marker>>();
+    new Map<AgmMarker, Promise<google.maps.Marker>>();
 
-  constructor(protected _mapsWrapper: GoogleMapsAPIWrapper, protected _zone: NgZone) {}
+  constructor(protected _mapsWrapper: GoogleMapsAPIWrapper, protected _zone: NgZone) { }
 
   async convertAnimation(uiAnim: keyof typeof google.maps.Animation | null) {
     if (uiAnim === null) {
@@ -36,7 +36,7 @@ export class MarkerManager {
 
   updateMarkerPosition(marker: AgmMarker): Promise<void> {
     return this._markers.get(marker).then(
-        (m: google.maps.Marker) => m.setPosition({lat: marker.latitude, lng: marker.longitude}));
+      (m: google.maps.Marker) => m.setPosition({ lat: marker.latitude, lng: marker.longitude }));
   }
 
   updateTitle(marker: AgmMarker): Promise<void> {
@@ -78,8 +78,8 @@ export class MarkerManager {
 
   addMarker(marker: AgmMarker) {
     const markerPromise = new Promise<google.maps.Marker>(async (resolve) =>
-     this._mapsWrapper.createMarker({
-        position: {lat: marker.latitude, lng: marker.longitude},
+      this._mapsWrapper.createMarker({
+        position: { lat: marker.latitude, lng: marker.longitude },
         label: marker.label,
         draggable: marker.draggable,
         icon: marker.iconUrl,
@@ -96,13 +96,13 @@ export class MarkerManager {
   getNativeMarker(marker: AgmMarker): Promise<google.maps.Marker> {
     return this._markers.get(marker);
   }
-
+  // | google.maps.MarkerChangeOptionEventNames
   createEventObservable<T extends (google.maps.MouseEvent | void)>(
-      eventName: google.maps.MarkerMouseEventNames | google.maps.MarkerChangeOptionEventNames,
-      marker: AgmMarker): Observable<T> {
+    eventName: google.maps.MapMouseEvent,
+    marker: AgmMarker): Observable<T> {
     return new Observable(observer => {
       this._markers.get(marker).then(m =>
-        m.addListener(eventName, e => this._zone.run(() => observer.next(e)))
+        m.addListener(eventName.domEvent.type, e => this._zone.run(() => observer.next(e)))
       );
     });
   }
