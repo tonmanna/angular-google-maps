@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "3.0.0-beta.1",
+  "version": "0.0.0-beta.1",
   "description": "Angular components for Google Maps",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "clean": "rimraf dist node_modules/@agm",
     "prebuild": "yarn clean",
     "build": "ng build core && ng build markerclusterer && ng build snazzy-info-window && ng build drawing",
-    "build:prod": "ng build core --prod && ng build markerclusterer --prod && ng build snazzy-info-window --prod && ng build drawing --prod",
+    "build:prod": "ng build core --configuration production && ng build markerclusterer --prod && ng build snazzy-info-window --prod && ng build drawing --prod",
     "lint": "ng lint",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -42,6 +42,7 @@
   },
   "homepage": "https://angular-maps.com",
   "dependencies": {
+    "@angular-devkit/build-ng-packagr": "^0.1002.0",
     "@angular/animations": "^14.1.0",
     "@angular/common": "^14.2.12",
     "@angular/compiler": "^14.1.0",

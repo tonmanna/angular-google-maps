@@ -97,12 +97,12 @@ export class MarkerManager {
     return this._markers.get(marker);
   }
   // | google.maps.MarkerChangeOptionEventNames
-  createEventObservable<T extends (google.maps.MouseEvent | void)>(
-    eventName: google.maps.MapMouseEvent,
-    marker: AgmMarker): Observable<T> {
+  createEventObservable(
+    eventName: string,
+    marker: AgmMarker): Observable<any> {
     return new Observable(observer => {
       this._markers.get(marker).then(m =>
-        m.addListener(eventName.domEvent.type, e => this._zone.run(() => observer.next(e)))
+        m.addListener(eventName, e => this._zone.run(() => observer.next(e)))
       );
     });
   }

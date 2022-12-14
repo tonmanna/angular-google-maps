@@ -257,32 +257,32 @@ export class AgmMarker implements OnDestroy, OnChanges, AfterContentInit, FitBou
     this._observableSubscriptions.push(rc);
 
     const ds =
-        this._markerManager.createEventObservable<google.maps.MouseEvent>('dragstart', this)
-            .subscribe(e => this.dragStart.emit(e));
+      this._markerManager.createEventObservable('dragstart', this)
+        .subscribe(e => this.dragStart.emit(e));
     this._observableSubscriptions.push(ds);
 
     const d =
-        this._markerManager.createEventObservable<google.maps.MouseEvent>('drag', this)
-          .subscribe(e => this.drag.emit(e));
+      this._markerManager.createEventObservable('drag', this)
+        .subscribe(e => this.drag.emit(e));
     this._observableSubscriptions.push(d);
 
     const de =
-        this._markerManager.createEventObservable<google.maps.MouseEvent>('dragend', this)
-          .subscribe(e => this.dragEnd.emit(e));
+      this._markerManager.createEventObservable('dragend', this)
+        .subscribe(e => this.dragEnd.emit(e));
     this._observableSubscriptions.push(de);
 
     const mover =
-        this._markerManager.createEventObservable<google.maps.MouseEvent>('mouseover', this)
-          .subscribe(e => this.mouseOver.emit(e));
+      this._markerManager.createEventObservable('mouseover', this)
+        .subscribe(e => this.mouseOver.emit(e));
     this._observableSubscriptions.push(mover);
 
     const mout =
-        this._markerManager.createEventObservable<google.maps.MouseEvent>('mouseout', this)
-          .subscribe(e => this.mouseOut.emit(e));
+      this._markerManager.createEventObservable('mouseout', this)
+        .subscribe(e => this.mouseOut.emit(e));
     this._observableSubscriptions.push(mout);
 
     const anChng =
-      this._markerManager.createEventObservable<void>('animation_changed', this)
+      this._markerManager.createEventObservable('animation_changed', this)
         .subscribe(() => {
           this.animationChange.emit(this.animation);
         });
