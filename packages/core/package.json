@@ -6,10 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SebastianM/angular-google-maps.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SebastianM/angular-google-maps/issues"
+    "url": "https://github.com/Amin-Karimi/angular-google-maps.git"
   },
   "homepage": "https://angular-maps.com",
   "keywords": [
