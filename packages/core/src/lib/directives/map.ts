@@ -90,7 +90,7 @@ export class AgmRotateControl extends AgmMapControl {
   selector: 'agm-map agm-scale-control',
   providers: [{ provide: AgmMapControl, useExisting: AgmScaleControl }],
 })
-export class AgmScaleControl extends AgmMapControl{
+export class AgmScaleControl extends AgmMapControl {
   getOptions(): Partial<google.maps.MapOptions> {
     return {
       scaleControl: true,
@@ -117,7 +117,7 @@ export class AgmStreetViewControl extends AgmMapControl {
   selector: 'agm-map agm-zoom-control',
   providers: [{ provide: AgmMapControl, useExisting: AgmZoomControl }],
 })
-export class AgmZoomControl extends AgmMapControl{
+export class AgmZoomControl extends AgmMapControl {
   @Input() style: keyof typeof google.maps.ZoomControlStyle;
   getOptions(): Partial<google.maps.MapOptions> {
     return {
@@ -321,20 +321,20 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
    */
   @Input() gestureHandling: google.maps.GestureHandlingOptions = 'auto';
 
-    /**
-     * Controls the automatic switching behavior for the angle of incidence of
-     * the map. The only allowed values are 0 and 45. The value 0 causes the map
-     * to always use a 0° overhead view regardless of the zoom level and
-     * viewport. The value 45 causes the tilt angle to automatically switch to
-     * 45 whenever 45° imagery is available for the current zoom level and
-     * viewport, and switch back to 0 whenever 45° imagery is not available
-     * (this is the default behavior). 45° imagery is only available for
-     * satellite and hybrid map types, within some locations, and at some zoom
-     * levels. Note: getTilt returns the current tilt angle, not the value
-     * specified by this option. Because getTilt and this option refer to
-     * different things, do not bind() the tilt property; doing so may yield
-     * unpredictable effects. (Default of AGM is 0 (disabled). Enable it with value 45.)
-     */
+  /**
+   * Controls the automatic switching behavior for the angle of incidence of
+   * the map. The only allowed values are 0 and 45. The value 0 causes the map
+   * to always use a 0° overhead view regardless of the zoom level and
+   * viewport. The value 45 causes the tilt angle to automatically switch to
+   * 45 whenever 45° imagery is available for the current zoom level and
+   * viewport, and switch back to 0 whenever 45° imagery is not available
+   * (this is the default behavior). 45° imagery is only available for
+   * satellite and hybrid map types, within some locations, and at some zoom
+   * levels. Note: getTilt returns the current tilt angle, not the value
+   * specified by this option. Because getTilt and this option refer to
+   * different things, do not bind() the tilt property; doing so may yield
+   * unpredictable effects. (Default of AGM is 0 (disabled). Enable it with value 45.)
+   */
   @Input() tilt = 0;
 
   /**
@@ -419,7 +419,7 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
     @Inject(PLATFORM_ID) private _platformId: Object,
     protected _fitBoundsService: FitBoundsService,
     private _zone: NgZone
-  ) {}
+  ) { }
 
   /** @internal */
   ngAfterContentInit() {
@@ -434,7 +434,7 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
 
   private _initMapInstance(el: HTMLElement) {
     this._mapsWrapper.createMap(el, {
-      center: {lat: this.latitude || 0, lng: this.longitude || 0},
+      center: { lat: this.latitude || 0, lng: this.longitude || 0 },
       zoom: this.zoom,
       minZoom: this.minZoom,
       maxZoom: this.maxZoom,
@@ -487,7 +487,7 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
   }
 
   private _updateMapOptionsChanges(changes: SimpleChanges) {
-    const options: {[propName: string]: any} = {};
+    const options: { [propName: string]: any } = {};
     const optionKeys =
       Object.keys(changes).filter(k => AgmMap._mapOptionsAttributes.indexOf(k) !== -1);
     optionKeys.forEach((k) => { options[k] = changes[k].currentValue; });
@@ -518,7 +518,7 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
   private _updatePosition(changes: SimpleChanges) {
     // tslint:disable: no-string-literal
     if (changes['latitude'] == null && changes['longitude'] == null &&
-        !changes['fitBounds']) {
+      !changes['fitBounds']) {
       // no position update needed
       return;
     }
@@ -599,7 +599,7 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
       this._mapsWrapper.getCenter().then((center: google.maps.LatLng) => {
         this.latitude = center.lat();
         this.longitude = center.lng();
-        this.centerChange.emit({lat: this.latitude, lng: this.longitude} as google.maps.LatLngLiteral);
+        this.centerChange.emit({ lat: this.latitude, lng: this.longitude } as google.maps.LatLngLiteral);
       });
     });
     this._observableSubscriptions.push(s);
@@ -648,18 +648,19 @@ export class AgmMap implements OnChanges, AfterContentInit, OnDestroy {
     type Event = { name: 'rightclick' | 'click' | 'dblclick', emitter: EventEmitter<google.maps.MouseEvent> };
 
     const events: Event[] = [
-      {name: 'click', emitter: this.mapClick},
-      {name: 'rightclick', emitter: this.mapRightClick},
-      {name: 'dblclick', emitter: this.mapDblClick},
+      { name: 'click', emitter: this.mapClick },
+      { name: 'rightclick', emitter: this.mapRightClick },
+      { name: 'dblclick', emitter: this.mapDblClick },
     ];
 
     events.forEach(e => {
       const s = this._mapsWrapper.subscribeToMapEvent(e.name).subscribe(
         ([event]) => {
           // the placeId will be undefined in case the event was not an IconMouseEvent (google types)
-          if ( (event as google.maps.IconMouseEvent).placeId && !this.showDefaultInfoWindow) {
+          if ((event as google.maps.IconMouseEvent).placeId && !this.showDefaultInfoWindow) {
             event.stop();
           }
+          event.coords = event.latLng.toJSON()
           e.emitter.emit(event);
         });
       this._observableSubscriptions.push(s);
