@@ -101,7 +101,6 @@ export class MarkerManager {
     eventName: string,
     marker: AgmMarker): Observable<any> {
     return new Observable(observer => {
-      console.log('event', eventName)
       this._markers.get(marker).then(m => {
         // m.addListener(eventName, e => this._zone.run(() => observer.next(e)))
         google.maps.event.addListener(m, eventName, e => this._zone.run(() => observer.next(e)))
