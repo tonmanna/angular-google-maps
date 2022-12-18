@@ -12,8 +12,7 @@ this package levereges the [@google/markerclustererplus][markerclustererplus] to
 ```shell
 npm install @google/markerclustererplus @agm/markerclusterer --save
 # or
-yarn add @google/markerclustererplus @agm/markerclusterer
-```
+
 
 ## Usage
 1. Add assets command to your angular.json

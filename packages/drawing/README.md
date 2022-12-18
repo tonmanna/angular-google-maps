@@ -9,8 +9,6 @@ this package adds drawing support to [AGM][agm].
 ```sh
 npm install @agm/drawing
 # or
-yarn add @agm/drawing
-```
 
 ## Usage
 
