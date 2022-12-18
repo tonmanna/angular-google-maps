@@ -1,7 +1,10 @@
 Angular Google Maps (AGM) Core - Angular 2+ Google Maps components
 =========
 
-This library was generated with Angular CLI version 14.2.0.
+This library was generated with Angular CLI version 14.2.0. AND 15.0.4
+
+V1.0.0 for Angular 14.2
+V2.0.0 for Angular 15.2
 
 @agm/core contains solutions for the Google Maps JavaScript Core API.
 

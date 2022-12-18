@@ -1,7 +1,7 @@
 {
   "name": "@amin-karimi/agm-core",
-  "version": "1.0.0",
-  "description": "Angular components for Google Maps",
+  "version": "2.0.0",
+  "description": "Angular components for Google Maps ",
   "author": "Sebastian Holstein <info@sebastian-holstein.de>",
   "license": "MIT",
   "repository": {
@@ -15,11 +15,14 @@
     "google-maps",
     "maps",
     "google",
-    "gmaps"
+    "gmaps",
+    "angular 15",
+    "angular 14",
+    "angular-map"
   ],
   "peerDependencies": {
-    "@angular/common": "^14.2.0",
-    "@angular/core": "^14.2.0"
+    "@angular/common": "^15.0.4",
+    "@angular/core": "^15.0.4"
   },
   "dependencies": {
     "tslib": "^2.4.0"
