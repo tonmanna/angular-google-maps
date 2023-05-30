@@ -1,10 +1,10 @@
 {
   "private": true,
-  "version": "0.0.0-beta.4",
+  "version": "0.0.0-beta.6",
   "description": "Angular components for Google Maps",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Amin-Karimi/angular-google-maps.git"
+    "url": "https://github.com/tonmanna/angular-google-maps.git"
   },
   "keywords": [
     "angular",
@@ -32,31 +32,30 @@
     "apidocs:markerclusterer": "compodoc -p packages/markerclusterer/tsconfig.lib.json --name @agm/markerclusterer  --output docs/public/api-docs/markerclusterer/ --hideGenerator --disableCoverage",
     "apidocs:drawing": "compodoc -p packages/drawing/tsconfig.lib.json --name @agm/drawing  --output docs/public/api-docs/drawing/ --hideGenerator --disableCoverage"
   },
-  "author": "Sebastian Holstein <info@sebastian-holstein.de>",
+  "author": "Worawut Boontan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Amin-Karimi/angular-google-maps/issues"
+    "url": "https://github.com/tonmanna/angular-google-maps/issues"
   },
   "homepage": "https://angular-maps.com",
   "dependencies": {
-    "@angular-devkit/build-ng-packagr": "^0.1002.0",
-    "@angular/animations": "^15.0.4",
-    "@angular/common": "^15.0.4",
-    "@angular/compiler": "^15.0.4",
-    "@angular/core": "^15.0.4",
-    "@angular/forms": "^15.0.4",
-    "@angular/platform-browser": "^15.0.4",
-    "@angular/platform-browser-dynamic": "^15.0.4",
-    "@angular/router": "^15.0.4",
+    "@angular/animations": "^16.0.3",
+    "@angular/common": "^16.0.3",
+    "@angular/compiler": "^16.0.3",
+    "@angular/core": "^16.0.3",
+    "@angular/forms": "^16.0.3",
+    "@angular/platform-browser": "^16.0.3",
+    "@angular/platform-browser-dynamic": "^16.0.3",
+    "@angular/router": "^16.0.3",
     "rxjs": "~7.5.6",
     "tslib": "^2.4.0",
-    "zone.js": "~0.11.7"
+    "zone.js": "^0.13.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.0.4",
-    "@angular-devkit/core": "^15.0.4",
-    "@angular/cli": "^15.0.4",
-    "@angular/compiler-cli": "^15.0.4",
+    "@angular-devkit/build-angular": "^16.0.3",
+    "@angular-devkit/core": "^16.0.3",
+    "@angular/cli": "^16.0.3",
+    "@angular/compiler-cli": "^16.0.3",
     "@types/jasmine": "~4.0.3",
     "@types/node": "^18.6.3",
     "jasmine-core": "~4.3.0",
@@ -65,7 +64,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
-    "ng-packagr": "^15.0.3",
-    "typescript": "~4.8.4"
+    "ng-packagr": "^16.0.1",
+    "typescript": "5.0.4"
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "@amin-karimi/agm-core",
+  "name": "itopplus-agm-core",
   "version": "2.0.0",
   "description": "Angular components for Google Maps ",
-  "author": "Sebastian Holstein <info@sebastian-holstein.de>",
+  "author": "Worawut Boontan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Amin-Karimi/angular-google-maps.git"
+    "url": "https://github.com/tonmanna/angular-google-maps.git"
   },
   "homepage": "https://angular-maps.com",
   "keywords": [
@@ -21,8 +21,8 @@
     "angular-map"
   ],
   "peerDependencies": {
-    "@angular/common": "^15.0.4",
-    "@angular/core": "^15.0.4"
+    "@angular/common": "^16.0.3",
+    "@angular/core": "^16.0.3"
   },
   "dependencies": {
     "tslib": "^2.4.0"

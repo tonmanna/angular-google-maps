@@ -24,12 +24,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "packages/core/tsconfig.lint.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["packages/core/tsconfig.lint.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -55,12 +51,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "packages/markerclusterer/tsconfig.lint.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["packages/markerclusterer/tsconfig.lint.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -86,12 +78,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "packages/snazzy-info-window/tsconfig.lint.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["packages/snazzy-info-window/tsconfig.lint.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -117,12 +105,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "packages/drawing/tsconfig.lint.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["packages/drawing/tsconfig.lint.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

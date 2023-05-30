@@ -1,12 +1,12 @@
 {
-  "name": "@amin-karimi/agm-snazzy-info-window",
+  "name": "itopplus-agm-snazzy-info-window",
   "version": "2.0.0",
   "description": "Angular Google Maps (AGM) package for Snazzy Info Window support",
-  "author": "Sebastian Holstein <info@sebastian-holstein.de>",
+  "author": "Worawut Boontan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Amin-Karimi/angular-google-maps.git"
+    "url": "https://github.com/tonmanna/angular-google-maps.git"
   },
   "homepage": "https://angular-maps.com",
   "keywords": [
@@ -17,9 +17,9 @@
     "snazzy-info-window"
   ],
   "peerDependencies": {
-    "@amin-karimi/agm-core": "2.0.0",
-    "@angular/common": "^15.0.4",
-    "@angular/core": "^15.0.4",
+    "itopplus-agm-core": "2.0.0",
+    "@angular/common": "^16.0.3",
+    "@angular/core": "^16.0.3",
     "snazzy-info-window": "^1.1.0"
   },
   "dependencies": {
@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "@types/google.maps": "^3.51.0",
-    "@amin-karimi/agm-core": "1.0.0"
+    "itopplus-agm-core": "2.0.0"
   }
 }

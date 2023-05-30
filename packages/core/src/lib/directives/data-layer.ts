@@ -1,4 +1,13 @@
-import { Directive, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { DataLayerManager } from './../services/managers/data-layer-manager';
@@ -208,7 +217,8 @@ export class AgmDataLayer implements OnInit, OnDestroy, OnChanges {
   /**
    * This event is fired when a feature in the layer is clicked.
    */
-  @Output() layerClick: EventEmitter<google.maps.Data.MouseEvent> = new EventEmitter<google.maps.Data.MouseEvent>();
+  @Output() layerClick: EventEmitter<google.maps.Data.MouseEvent> =
+    new EventEmitter<google.maps.Data.MouseEvent>();
 
   /**
    * The geoJson to be displayed
@@ -218,9 +228,11 @@ export class AgmDataLayer implements OnInit, OnDestroy, OnChanges {
   /**
    * The layer's style function.
    */
-  @Input() style: (param: google.maps.Data.Feature) => google.maps.Data.StyleOptions;
+  @Input() style: (
+    param: google.maps.Data.Feature
+  ) => google.maps.Data.StyleOptions;
 
-  constructor(private _manager: DataLayerManager) { }
+  constructor(private _manager: DataLayerManager) {}
 
   ngOnInit() {
     if (this._addedToManager) {
@@ -233,25 +245,34 @@ export class AgmDataLayer implements OnInit, OnDestroy, OnChanges {
 
   private _addEventListeners() {
     const listeners = [
-      { name: 'click', handler: (ev: google.maps.Data.MouseEvent) => this.layerClick.emit(ev) },
+      {
+        name: 'click',
+        handler: (ev: google.maps.Data.MouseEvent) => this.layerClick.emit(ev),
+      },
     ];
     listeners.forEach((obj) => {
-      const os = this._manager.createEventObservable(obj.name, this).subscribe(obj.handler);
+      const os = this._manager
+        .createEventObservable(obj.name, this)
+        .subscribe(obj.handler);
       this._subscriptions.push(os);
     });
   }
 
   /** @internal */
-  id(): string { return this._id; }
+  id(): string {
+    return this._id;
+  }
 
   /** @internal */
-  toString(): string { return `AgmDataLayer-${this._id.toString()}`; }
+  toString(): string {
+    return `AgmDataLayer-${this._id.toString()}`;
+  }
 
   /** @internal */
   ngOnDestroy() {
     this._manager.deleteDataLayer(this);
     // unsubscribe all registered observable subscriptions
-    this._subscriptions.forEach(s => s.unsubscribe());
+    this._subscriptions.forEach((s) => s.unsubscribe());
   }
 
   /** @internal */
@@ -266,8 +287,13 @@ export class AgmDataLayer implements OnInit, OnDestroy, OnChanges {
       this._manager.updateGeoJson(this, geoJsonChange.currentValue);
     }
 
-    const dataOptions = AgmDataLayer._dataOptionsAttributes.reduce<google.maps.Data.DataOptions>((options, k) =>
-      options[k] = changes.hasOwnProperty(k) ? changes[k].currentValue : (this as any)[k], {});
+    const dataOptions = AgmDataLayer._dataOptionsAttributes.reduce<any>(
+      (options, k) =>
+        (options[k] = changes.hasOwnProperty(k)
+          ? changes[k].currentValue
+          : (this as any)[k]),
+      {}
+    );
 
     this._manager.setDataOptions(this, dataOptions);
   }
