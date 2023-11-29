@@ -16,8 +16,7 @@
     "maps",
     "google",
     "gmaps",
-    "angular 15",
-    "angular 14",
+    "angular 17",
     "angular-map"
   ],
   "peerDependencies": {
