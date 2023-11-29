@@ -20,18 +20,17 @@
     "agm"
   ],
   "peerDependencies": {
-    "itopplus-agm-core": "2.0.0",
-    "@angular/common": "^9.1.0 || ^10.0.0",
-    "@angular/core": "^9.1.0 || ^10.0.0",
-    "@google/markerclustererplus": "^5.0.4"
+    "itopplus-agm-core": "3.0.0",
+    "@angular/common": "17.0.4",
+    "@angular/core": "17.0.4",
+    "@google/markerclustererplus": "5.1.3"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "2.6.2"
   },
   "devDependencies": {
-    "itopplus-agm-core": "2.0.0",
-    "@google/markerclustererplus": "^5.0.4",
-    "@types/googlemaps": "^3.39.8",
-    "@types/jest": "^26.0.3"
+    "itopplus-agm-core": "3.0.0",
+    "@types/googlemaps": "^3.43.3",
+    "@types/jest": "29.5.10"
   }
 }
