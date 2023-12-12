@@ -1,5 +1,7 @@
 # We handle only
 
-itopplus-agm-core
-cd packages/core/
-npx ng-packagr -p ng-package.json
+## IVY DISABLE IGNORE POST SCRIPT FOR PUBLISH
+
+npm run build:prod
+cd dist/core
+npm publish --ignore-scripts
