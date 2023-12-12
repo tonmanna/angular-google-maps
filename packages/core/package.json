@@ -1,6 +1,6 @@
 {
   "name": "itopplus-agm-core",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Angular components for Google Maps ",
   "author": "Worawut Boontan",
   "license": "MIT",
@@ -20,8 +20,8 @@
     "angular-map"
   ],
   "peerDependencies": {
-    "@angular/common": "17.0.4",
-    "@angular/core": "17.0.4"
+    "@angular/common": "^17.0.4",
+    "@angular/core": "^17.0.4"
   },
   "dependencies": {
     "tslib": "2.6.2"
