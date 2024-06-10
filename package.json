@@ -15,10 +15,7 @@
     "gmaps"
   ],
   "workspaces": [
-    "packages/core",
-    "packages/drawing",
-    "packages/markerclusterer",
-    "packages/snazzy-info-window"
+    "packages/*"
   ],
   "scripts": {
     "clean": "rimraf dist node_modules/@agm",
