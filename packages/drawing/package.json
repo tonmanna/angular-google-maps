@@ -20,8 +20,8 @@
     "map-drawing"
   ],
   "peerDependencies": {
-    "@angular/common": "17.0.4",
-    "@angular/core": "17.0.4"
+    "@angular/common": "^18.0.2",
+    "@angular/core": "^18.0.2"
   },
   "dependencies": {
     "tslib": "2.6.2"
