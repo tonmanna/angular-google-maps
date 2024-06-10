@@ -20,7 +20,7 @@
     "agm"
   ],
   "peerDependencies": {
-    "itopplus-agm-core": "3.0.3",
+    "itopplus-agm-core": "3.0.4",
     "@angular/common": "^18.0.2",
     "@angular/core": "^18.0.2",
     "@google/markerclustererplus": "5.1.3"
@@ -29,7 +29,7 @@
     "tslib": "2.6.2"
   },
   "devDependencies": {
-    "itopplus-agm-core": "3.0.3",
+    "itopplus-agm-core": "3.0.4",
     "@types/googlemaps": "^3.43.3",
     "@types/jest": "29.5.10"
   }

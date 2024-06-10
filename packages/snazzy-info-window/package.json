@@ -17,7 +17,7 @@
     "snazzy-info-window"
   ],
   "peerDependencies": {
-    "itopplus-agm-core": "3.0.3",
+    "itopplus-agm-core": "3.0.4",
     "@angular/common": "^18.0.2",
     "@angular/core": "^18.0.2",
     "snazzy-info-window": "1.1.1"
@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "@types/google.maps": "3.54.10",
-    "itopplus-agm-core": "3.0.3"
+    "itopplus-agm-core": "3.0.4"
   }
 }
